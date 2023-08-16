@@ -11,10 +11,8 @@ const App = () => {
       <>
         <NavBar />
         <div className="container">
-
             <SearchBar setResults={setResults}/>
             <SearchResults results={results}/>
-
         </div> 
       </>
     </Router>

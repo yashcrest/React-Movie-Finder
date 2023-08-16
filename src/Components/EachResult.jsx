@@ -7,7 +7,7 @@ const EachResult = ({result}) => {
 
   return (
       <div className='each-result' onClick={(e) => clicked(e.target)}>
-        {result.name.first} {result.name.last}
+        {result.Title} ({result.Year})
      </div>
   )
 }

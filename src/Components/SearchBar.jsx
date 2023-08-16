@@ -6,42 +6,42 @@ const SearchBar = ({setResults}) => {
 
   const fetchData = async (value) => {
     const api_key = '829291bf';
-    const url = `http://www.omdbapi.com/?t=${input}&apikey=${api_key}`
+    const url = `http://www.omdbapi.com/?apikey=${api_key}&s=${value}`
     try {
       const res = await fetch(url);
 
       if(!res.ok) {
         throw new Error (`HTTP error! Status: ${res.status}`)
       }
-      const data = await res.json()
-      console.log(data);
 
-      const filteredResult = results.filter(user => {
-        return value && (user.name.first.toLowerCase().includes(value) || user.name.last.toLowerCase().includes(value) )
-      })
-
-      console.log(filteredResult);
-      setResults(filteredResult)
-
-
+      const movieData = await res.json()
+      console.log(movieData);
+      if(movieData.Error){
+        console.log(movieData.Error);
+        setResults([]);
+      } else {
+        setResults(movieData.Search);
+      }
     } catch (err) {
        console.log('Error fetching data', err)
     }
-    
   }
 
 
   const handleChange =  (value) => {
     setInput(value)
-    fetchData(value)
+    if(value.trim()){
+      fetchData(value)
+    } else {
+      setResults([]);
+    }
   }
 
 
   return (
     <div>
-        {/* value parameter helps determine what user has entered.  */}
         <a href="#" className='input-icon'><FaSearch color='grey' size={30}/></a>
-        <input type="text" placeholder='Search a Movie...' value={input} onChange={(e) => handleChange(e.target.value)}/>
+        <input type="text" placeholder='Search a Movie...' value={input}  onChange={(e) => handleChange(e.target.value)}/>
     </div>
   )
 }
