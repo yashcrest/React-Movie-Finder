@@ -11,10 +11,10 @@ const App = () => {
       <>
         <NavBar />
         <div className="container">
-          <Route exact path='/' component={Index}>
+
             <SearchBar setResults={setResults}/>
             <SearchResults results={results}/>
-          </Route>
+
         </div> 
       </>
     </Router>
