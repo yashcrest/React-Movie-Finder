@@ -4,6 +4,9 @@ import {FaSearch} from 'react-icons/fa'
 const SearchBar = ({setResults}) => {
   const [input, setInput] = useState('');
 
+
+  //fetching data
+
   const fetchData = async (value) => {
     const api_key = '829291bf';
     const url = `http://www.omdbapi.com/?apikey=${api_key}&s=${value}`
@@ -15,11 +18,12 @@ const SearchBar = ({setResults}) => {
       }
 
       const movieData = await res.json()
-      console.log(movieData);
       if(movieData.Error){
         console.log(movieData.Error);
         setResults([]);
       } else {
+        console.log(movieData.Search);
+        //pushing it on the results array in app.jsx
         setResults(movieData.Search);
       }
     } catch (err) {
