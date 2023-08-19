@@ -6,7 +6,7 @@ const SearchBar = ({setResults,input,setInput}) => {
   //fetching data
   const fetchData = async (value) => {
     const api_key = import.meta.env.VITE_OMDB_API_KEY
-    const url = `http://www.omdbapi.com/?apikey=${api_key}&s=${value}`
+    const url = `https://www.omdbapi.com/?apikey=${api_key}&s=${value}`
     try {
       const res = await fetch(url);
 
