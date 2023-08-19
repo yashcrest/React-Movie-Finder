@@ -1,6 +1,11 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.container {
+    position: relative;
+}
+
 .input {
     outline: none;
     border: none;
@@ -16,6 +21,9 @@ body {
     width: 100%;
     box-shadow: 0px 0px 8px #ddd;
     overflow-y: scroll ;
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
 }
 
 .each-result {
@@ -39,7 +47,19 @@ body {
     padding: 10px;
 }
 
-.plot, .cast, .rating {
+.plot, .cast, .rating, .bold{
     font-weight: bold;
 }
 
+.card::-webkit-scrollbar {
+    display: none;  /* for Chrome, Safari, and Opera */
+}
+
+.card {
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.title {
+    border-bottom: 1px solid black;
+}

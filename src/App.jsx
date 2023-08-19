@@ -11,7 +11,7 @@ const App = () => {
         <NavBar />
           <div className="container">
             <Routes>
-              <Route exact path='/' Component={Index}> </Route>
+              <Route exact path='/' element={<Index />} />
             </Routes>
           </div> 
       </>
