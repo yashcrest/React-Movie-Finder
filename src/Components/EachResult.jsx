@@ -10,6 +10,8 @@ const EachResult = ({result, onMovieClick}) => {
         console.log(movieData);
         //passing the movie info to app.jsx which will pass it to Movieinfo component
         onMovieClick(movieData);
+
+        setInput(''); //Clear the input field using React state management
     }
   return (
       <div className='each-result' onClick={(e) => clicked(e.target)}>
