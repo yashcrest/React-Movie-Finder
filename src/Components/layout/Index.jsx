@@ -1,8 +1,10 @@
 import React from 'react'
-import Movies from '../movie/MoviesList';
-import SearchBar from '../SearchBar';
-import SearchResults from '../SearchResults';
-import MovieInfo from '../MovieInfo';
+import { useState, useContext } from 'react';
+import MoviesList from '../movies/MoviesList';
+import SearchBar from '../movies/SearchBar';
+import SearchResults from '../movies/SearchResults';
+import MovieInfo from '../movies/MovieInfo';
+
 
 const Index = () => {
     const [results, setResults] = useState([]);
