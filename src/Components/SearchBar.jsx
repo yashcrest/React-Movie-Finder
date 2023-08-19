@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
 
-const SearchBar = ({setResults, input, setInput}) => {
-  const [input, setInput] = useState('');
-
+const SearchBar = ({setResults,input,setInput}) => {
 
   //fetching data
-
   const fetchData = async (value) => {
     const api_key = '829291bf';
     const url = `http://www.omdbapi.com/?apikey=${api_key}&s=${value}`

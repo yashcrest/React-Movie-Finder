@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EachResult = ({result, onMovieClick}) => {
+const EachResult = ({result,setInput, onMovieClick}) => {
     const clicked = async () => {
         const api_key = '829291bf'
         const url = `http://www.omdbapi.com/?apikey=${api_key}&i=${result.imdbID}`
