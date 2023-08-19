@@ -8,13 +8,20 @@ import MovieInfo from './Components/MovieInfo';
 const App = () => {
   const [results, setResults] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [input, setInput] = useState('');
+
+  //handle click on eachresult
+  const handleMovieClick = (movieData) => {
+    setSelectedMovie(movieData)
+    setResults([]); //Clear the search results
+  }
   return (
     <Router>
       <>
         <NavBar />
         <div className="container">
-            <SearchBar setResults={setResults}/>
-            <SearchResults results={results} setSelectedMovie={setSelectedMovie}/>
+            <SearchBar setResults={setResults} input={input} setInput={setInput}/>
+            <SearchResults results={results} onMovieClick={handleMovieClick} setInput={setInput}/>
             {selectedMovie && <MovieInfo movie={selectedMovie}/>}
         </div> 
       </>

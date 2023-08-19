@@ -4,7 +4,7 @@ const MovieInfo = ({movie}) => {
   return (
     <div className='movie-info text-center'>
       <h2>{movie.Title} ({movie.Year})</h2>
-      <img className='img-fluid img-thumbnail my-2' src={movie.Poster} alt={movie.Title} />
+      <img className='rounded' src={movie.Poster} alt={movie.Title} />
       <p>{movie.Plot}</p>
       <p><span className='lead'>Cast: </span>{movie.Actors}</p>
       <p>Rating: {movie.imdbRating}</p>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
 
-const SearchBar = ({setResults}) => {
+const SearchBar = ({setResults, input, setInput}) => {
   const [input, setInput] = useState('');
 
 
@@ -45,7 +45,7 @@ const SearchBar = ({setResults}) => {
   return (
     <div>
         <a href="#" className='input-icon'><FaSearch color='grey' size={30}/></a>
-        <input type="text" placeholder='Search a Movie...' value={input}  onChange={(e) => handleChange(e.target.value)}/>
+        <input className='input' type="text" placeholder='Search a Movie...' value={input}  onChange={(e) => handleChange(e.target.value)}/>
     </div>
   )
 }
