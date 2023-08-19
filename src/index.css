@@ -51,12 +51,12 @@ body {
     font-weight: bold;
 }
 
-.card::-webkit-scrollbar {
+.movie-list::-webkit-scrollbar {
     display: none;  /* for Chrome, Safari, and Opera */
 }
 
-.card {
-    height: 700px;
+.movie-list {
+    max-height: 700px;
     overflow-y: scroll;
 }
 
