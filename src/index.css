@@ -1,14 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-input {
+.input {
     outline: none;
     border: none;
     height: 100%;
     width: 75%;
     padding: 0.8rem;
     font-size: 20px;
-    background: transparent;
 }
 
 

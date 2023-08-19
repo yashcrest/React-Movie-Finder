@@ -3,8 +3,8 @@ import React from 'react'
 
 const MoviesList = () => {
   return (
-    <div>
-      
+    <div className='container text-center my-5'>
+      <h1>Trending Movies</h1> 
     </div>
   )
 }
