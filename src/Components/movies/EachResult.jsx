@@ -2,7 +2,7 @@ import React from 'react'
 
 const EachResult = ({result,setInput, onMovieClick}) => {
     const clicked = async () => {
-        const api_key = '829291bf'
+        const api_key = import.meta.env.VITE_API_KEY ;
         const url = `http://www.omdbapi.com/?apikey=${api_key}&i=${result.imdbID}`
         const response  = await fetch(url);
         const movieData = await response.json();

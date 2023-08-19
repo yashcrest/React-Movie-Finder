@@ -20,6 +20,7 @@ const Index = () => {
     <>
       <SearchBar setResults={setResults} input={input} setInput={setInput}/>
       <SearchResults results={results} onMovieClick={handleMovieClick} setInput={setInput}/>
+      <MoviesList />
       {selectedMovie && <MovieInfo movie={selectedMovie}/>}
     </>
   )
