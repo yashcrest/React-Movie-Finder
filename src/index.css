@@ -63,3 +63,7 @@ body {
 .title {
     border-bottom: 1px solid black;
 }
+
+.movies {
+    margin-bottom: 100px;
+}

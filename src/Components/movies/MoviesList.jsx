@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const MoviesList = ({popularMovies}) => {
   return (
-    <div>
+    <div className='movies'>
       <h1 className='text-center m-5 title'>Trending Movies</h1>
       <div className="row d-flex g-5">
       {popularMovies.map((movie, id) => (
