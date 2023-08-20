@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {FaStar} from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import SearchBar from './SearchBar';
 
-const MovieInfo = ({movie}) => {
+const MovieInfo = () => {
+  const {id} = useParams();
+  const [movie, setMovie] = useState(null);
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      const api_key = import.meta.env.VITE_OMDB_API_KEY;
+      const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id}`
+      const response = await fetch(url);
+      const movieData = await response.json();
+      setMovie(movieData);
+    };
+
+    fetchMovieDetails();
+  },[id]);
+
+  if(!movie) return <div>Loading...</div>
   return (
     <>
+    <SearchBar />
     <Link className='link' to='/'>Go back</Link>
       <div className='movie-info  mx-auto'>
         <h2>{movie.Title} ({movie.Year})</h2>
