@@ -4,7 +4,7 @@ import {BiArrowBack} from 'react-icons/bi'
 import { Link, useParams } from 'react-router-dom'
 import SearchBar from './SearchBar';
 
-const MovieInfo = () => {
+const MovieInfo = ({input, setResults, setInput}) => {
   const {id} = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -23,7 +23,7 @@ const MovieInfo = () => {
   if(!movie) return <div>Loading...</div>
   return (
     <>
-    <SearchBar />
+    <SearchBar input={input} setResults={setResults} setInput={setInput}/>
     <Link className='link h2 text-dark' to='/'><BiArrowBack /></Link>
       <div className='movie-info  mx-auto'>
         <h2>{movie.Title} ({movie.Year})</h2>

@@ -1,12 +1,12 @@
 import React from 'react'
-import SearchBar from '../movies/SearchBar'
+import { Link } from 'react-router-dom'
 
-const NavBar = ({input, setInput, setResults}) => {
+const NavBar = () => {
   return (
     <nav className='navbar bg-warning mb-5'> 
-        <span className="navbar-brand mb-0 h1 mx-auto text-dark">
+        <Link to='/' className="navbar-brand mb-0 h1 mx-auto text-dark">
             Movie Finder
-        </span>
+        </Link>
     </nav>
   )
 } 
