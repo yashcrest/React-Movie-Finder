@@ -15,6 +15,7 @@ const SearchBar = ({setResults,input,setInput}) => {
       }
 
       const movieData = await res.json()
+      console.log(movieData);
       if(movieData.Error){
         console.log(movieData.Error);
         setResults([]);
