@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {FaStar} from 'react-icons/fa'
 import {BiArrowBack} from 'react-icons/bi'
 import { Link, useParams } from 'react-router-dom'
-import SearchBar from './SearchBar';
 
-const MovieInfo = ({input, setResults, setInput}) => {
+const MovieInfo = ({input, setResults, setInput, results}) => {
   const {id} = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -23,7 +22,6 @@ const MovieInfo = ({input, setResults, setInput}) => {
   if(!movie) return <div>Loading...</div>
   return (
     <>
-    <SearchBar input={input} setResults={setResults} setInput={setInput}/>
     <Link className='link h2 text-dark' to='/'><BiArrowBack /></Link>
       <div className='movie-info  mx-auto'>
         <h2>{movie.Title} ({movie.Year})</h2>

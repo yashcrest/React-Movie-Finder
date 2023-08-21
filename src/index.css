@@ -44,6 +44,7 @@ body {
     overflow-y: auto;
 }
 
+
 .poster {
     padding: 10px;
 }
@@ -59,6 +60,15 @@ body {
 .movie-list {
     max-height: 700px;
     overflow-y: scroll;
+}
+
+/* mouse hover effect on each card */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .title {

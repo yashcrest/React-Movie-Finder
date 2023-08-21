@@ -6,7 +6,7 @@ const MoviesList = ({popularMovies}) => {
       <h1 className='text-center m-5 title'>Trending Movies</h1>
       <div className="row d-flex g-5">
       {popularMovies.map((movie, id) => (
-          <div className="col-lg-4 mh-25">
+          <div className="col-lg-4 mh-25" key={id}>
             <div className="card p-3">
               <h3 className='text-center'>{movie.title || movie.name}</h3>
               <div className="movie-list">
