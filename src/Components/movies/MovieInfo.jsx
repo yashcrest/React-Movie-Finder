@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {FaStar} from 'react-icons/fa'
+import {BiArrowBack} from 'react-icons/bi'
 import { Link, useParams } from 'react-router-dom'
 import SearchBar from './SearchBar';
 
@@ -23,7 +24,7 @@ const MovieInfo = () => {
   return (
     <>
     <SearchBar />
-    <Link className='link' to='/'>Go back</Link>
+    <Link className='link h2 text-dark' to='/'><BiArrowBack /></Link>
       <div className='movie-info  mx-auto'>
         <h2>{movie.Title} ({movie.Year})</h2>
         <img className='rounded poster' src={movie.Poster} alt={movie.Title} />

@@ -7,7 +7,6 @@ const NavBar = ({input, setInput, setResults}) => {
         <span className="navbar-brand mb-0 h1 mx-auto text-dark">
             Movie Finder
         </span>
-        <SearchBar input={input} setInput={setInput} setResults={setResults}/>
     </nav>
   )
 } 
