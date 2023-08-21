@@ -3,14 +3,14 @@ import {FaStar} from 'react-icons/fa'
 import {BiArrowBack} from 'react-icons/bi'
 import { Link, useParams } from 'react-router-dom'
 
-const MovieInfo = ({input, setResults, setInput, results}) => {
+const MovieInfo = () => {
   const {id} = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      const api_key = import.meta.env.VITE_OMDB_API_KEY;
-      const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id}`
+      const api_key = import.meta.env.VITE_TMDB_API_KEY;
+      const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${tmdb_api_key}&language=en-US`;
       const response = await fetch(url);
       const movieData = await response.json();
       setMovie(movieData);
