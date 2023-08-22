@@ -6,7 +6,7 @@ const MoviesList = ({popularMovies}) => {
 
   //handle movie Click in homepage
   const handleMovieClick = (movieId) => {
-    navigate(`/movies/${movieId}`);
+    navigate(`/movie/${movieId}`);
   };
 
   return (

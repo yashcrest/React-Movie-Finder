@@ -20,7 +20,6 @@ const SearchBar = ({setResults,input,setInput}) => {
         console.log(movieData.Error);
         setResults([]);
       } else {
-        console.log(movieData.results);
         //pushing it on the results array in app.jsx
         setResults(movieData.results);
       }
