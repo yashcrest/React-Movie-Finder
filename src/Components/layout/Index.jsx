@@ -46,7 +46,7 @@ const Index = () => {
     <>
       <SearchBar setResults={setResults} input={input} setInput={setInput}/>
       <SearchResults results={results} onMovieClick={handleMovieClick} setInput={setInput}/>
-      {selectedMovie ? <MovieInfo /> : <MoviesList  popularMovies={popularMovies}/>}
+      {selectedMovie ? <MovieInfo setResults={setResults}/> : <MoviesList  popularMovies={popularMovies}/>}
     </>
   )
 }

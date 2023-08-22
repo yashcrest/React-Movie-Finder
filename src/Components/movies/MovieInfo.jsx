@@ -3,7 +3,7 @@ import {FaStar} from 'react-icons/fa'
 import {BiArrowBack} from 'react-icons/bi'
 import { Link, useParams } from 'react-router-dom'
 
-const MovieInfo = () => {
+const MovieInfo = ({setResults}) => {
   const {id} = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -13,6 +13,7 @@ const MovieInfo = () => {
       const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${tmdb_api_key}&language=en-US`;
       const response = await fetch(url);
       const movieData = await response.json();
+      console.log(movieData);
       setMovie(movieData);
     };
 
@@ -25,7 +26,7 @@ const MovieInfo = () => {
     <Link className='link h2 text-dark' to='/'><BiArrowBack /></Link>
       <div className='movie-info  mx-auto'>
         <h2>{movie.original_title} ({movie.release_date})</h2>
-        <img className='rounded poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
+        <img className='rounded poster' src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} alt={movie.original_title} />
         <p> <span className='plot lead'>Plot: </span>{movie.overview}</p>
         <p><span className='cast lead'>Cast: </span>{movie.Actors}</p>
         <p><span className='cast lead'>Director: </span>{movie.Director}</p>

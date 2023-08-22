@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const EachResult = ({result,setInput}) => {
   const navigate = useNavigate();
     const clicked = async () => {
-        navigate(`movie/${result.imdbID}`)
+        navigate(`movie/${result.id}`)
         setInput(''); //Clear the input field using React state management
     }
 
