@@ -9,7 +9,7 @@ const MovieInfo = () => {
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      const api_key = import.meta.env.VITE_TMDB_API_KEY;
+      const tmdb_api_key = import.meta.env.VITE_TMDB_API_KEY;
       const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${tmdb_api_key}&language=en-US`;
       const response = await fetch(url);
       const movieData = await response.json();
