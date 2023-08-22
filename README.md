@@ -1,3 +1,3 @@
 # React Movies Finder App
 
-This is a simple Movie Finder app that is build with React JS.
+This is a Movie Finder app build using React JS.
