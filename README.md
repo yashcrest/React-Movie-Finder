@@ -2,7 +2,8 @@
 
 A simple and intuitive web application to search for movies and view detailed information about them, using the TMDB (The Movie Database) API.
 
-![Screenshot of the Movie Info App](link-to-a-screenshot-of-your-app-if-available)
+![Movie-Finder](https://github.com/yashcrest/React-Movie-Finder/assets/79971012/a7abb99b-413c-46aa-b531-4189ca5889fa)
+
 
 ## Features:
 
