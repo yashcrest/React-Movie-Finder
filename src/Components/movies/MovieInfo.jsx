@@ -24,7 +24,14 @@ const MovieInfo = ({setResults}) => {
       const creditData = await creditsResponse.json()
       const imageData = await imageResponse.json() //still have to figure out how to handle and display this response
 
-      const director = creditData.crew.find
+      const director = creditData.crew.find(person => person.know_for_department === 'Direcotor');
+      const cast = creditData.cast.slice(0,5).map(person => person.name).join(', ' ) //getting first 3 casts
+
+      setMovie({
+        ...movieData,
+        director: director ? director.name : 'N/A',
+        cast: cast,
+      })
     };
 
     fetchMovieDetails();
@@ -38,9 +45,9 @@ const MovieInfo = ({setResults}) => {
         <h2>{movie.original_title} ({movie.release_date})</h2>
         <img className='rounded poster' src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} alt={movie.original_title} />
         <p> <span className='plot lead'>Plot: </span>{movie.overview}</p>
-        <p><span className='cast lead'>Cast: </span>{movie.Cast}</p>
-        <p><span className='cast lead'>Director: </span>{movie.Director}</p>
-        <p> <span className='plot lead'>Genre: </span>{movie.Genre}</p>
+        <p><span className='cast lead'>Cast: </span>{movie.cast}</p>
+        <p><span className='cast lead'>Director: </span>{movie.director}</p>
+        <p> <span className='plot lead'>Genre: </span>{movie.genres.slice(0,3).map(genre => genre.name).join(', ')}</p>
         <p><span className='rating lead'>IMDB Rating:</span> {movie.imdbRating} <FaStar  className='mb-1'/> </p>
       </div>
     </>
