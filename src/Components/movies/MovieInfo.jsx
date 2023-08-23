@@ -24,8 +24,8 @@ const MovieInfo = ({setResults}) => {
       const creditData = await creditsResponse.json()
       const imageData = await imageResponse.json() //still have to figure out how to handle and display this response
 
-      const director = creditData.crew.find(person => person.know_for_department === 'Direcotor');
-      const cast = creditData.cast.slice(0,5).map(person => person.name).join(', ' ) //getting first 3 casts
+      const director = creditData.crew.find(person => person.job === 'Director');
+      const cast = creditData.cast.slice(0,5).map(person => person.name).join(', ' ) //getting first 5 casts
 
       setMovie({
         ...movieData,
