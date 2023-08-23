@@ -10,11 +10,21 @@ const MovieInfo = ({setResults}) => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       const tmdb_api_key = import.meta.env.VITE_TMDB_API_KEY;
-      const url = `https://api.themoviedb.org/3/movie/${id}?append_to_respond=videos,credits&api_key=${tmdb_api_key}`;
-      const response = await fetch(url);
-      const movieData = await response.json();
-      console.log(movieData);
-      setMovie(movieData);
+      const detailsUrl = `https://api.themoviedb.org/3/movie/${id}?&api_key=${tmdb_api_key}&language=en-US`;
+      const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?&api_key=${tmdb_api_key}`;
+      const imageUrl = `https://api.themoviedb.org/3/movie/${id}/images?api_key=${tmdb_api_key}`;
+
+      const [detailsResponse , creditsResponse, imageResponse] = await Promise.all([
+        fetch(detailsUrl),
+        fetch(creditsUrl),
+        fetch(imageUrl),
+      ]);
+
+      const movieData = await detailsResponse.json()
+      const creditData = await creditsResponse.json()
+      const imageData = await imageResponse.json() //still have to figure out how to handle and display this response
+
+      const director = creditData.crew.find
     };
 
     fetchMovieDetails();
