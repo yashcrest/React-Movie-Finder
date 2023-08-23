@@ -22,5 +22,7 @@ A simple and intuitive web application to search for movies and view detailed in
 1. **Clone the Repository**: 
 
 ```bash
-git clone [your-repo-url]
-cd [your-repo-name]
+git clone [https://github.com/yashcrest/React-Movie-Finder]
+cd [React-Movie-Finder]
+
+
