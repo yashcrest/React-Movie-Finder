@@ -41,7 +41,7 @@ const MovieInfo = ({setResults}) => {
   return (
     <>
     <Link className='link h2 text-dark' to='/'><BiArrowBack /></Link>
-      <div className='movie-info  mx-auto'>
+      <div className='movie-info  mx-auto mb-5'>
         <h2>{movie.original_title} ({movie.release_date})</h2>
         <img className='rounded poster' src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} alt={movie.original_title} />
         <p> <span className='plot lead'>Plot: </span>{movie.overview}</p>

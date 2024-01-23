@@ -7,7 +7,7 @@ import SearchResults from '../movies/SearchResults';
 import MovieInfo from '../movies/MovieInfo';
 
 
-const Index = () => {
+const MovieDashboard = () => {
     const [results, setResults] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [input, setInput] = useState('');
@@ -51,5 +51,5 @@ const Index = () => {
   )
 }
 
-export default Index
+export default MovieDashboard
  
