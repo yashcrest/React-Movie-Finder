@@ -25,5 +25,5 @@ A simple and intuitive web application to search for movies and view detailed in
 git clone https://github.com/yashcrest/React-Movie-Finder
 cd React-Movie-Finder
 
-> **_NOTE:_**  Please create a .env file and add tmdb_api_key = "61ba334e8728a89f12e1c2f0efc08d79"
+> **_NOTE:_**  Please create a .env file and add VITE_TMDB_API_KEY = "61ba334e8728a89f12e1c2f0efc08d79"
 
