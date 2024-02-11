@@ -11,15 +11,10 @@ const App = () => {
     <SearchProvider>
       <Router>
         <>
-          <NavBar input={input} setInput={setInput} setResults={setResults} />
+          <NavBar />
           <div className="container">
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <MovieDashBoard results={results} setResults={setResults} />
-                }
-              />
+              <Route path="/" element={<MovieDashBoard />} />
               <Route path="/movie/:id" element={<MovieInfo />} />
             </Routes>
           </div>

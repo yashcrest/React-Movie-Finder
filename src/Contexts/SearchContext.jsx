@@ -4,7 +4,7 @@ const SearchContext = createContext();
 
 export const useSearch = () => useContext(SearchContext);
 
-export const SearchProvider = ({ children }) => {
+const SearchProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
 
@@ -14,3 +14,5 @@ export const SearchProvider = ({ children }) => {
     </SearchContext.Provider>
   );
 };
+
+export default SearchProvider;
