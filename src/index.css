@@ -4,8 +4,26 @@ body {
     flex-direction: column;
 }
 
+#root {
+    position: relative;
+    min-height: 100vh;
+}
+
+.footer-component {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 .container {
     position: relative;
+}
+
+/* search bar */
+.search-bar{
+    border: 1px solid rgb(81, 84, 25);
+    padding: 0.2em 0.8em;
+    border-radius: 20px;
 }
 
 .input {
@@ -15,7 +33,6 @@ body {
     width: 75%;
     padding: 0.8rem;
     font-size: 20px;
-    margin-bottom: 2rem;
 }
 
 

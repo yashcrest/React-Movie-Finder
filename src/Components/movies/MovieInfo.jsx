@@ -1,3 +1,4 @@
+// this page handles movie detailed view
 import React, { useEffect, useState } from 'react'
 import {FaStar} from 'react-icons/fa'
 import {BiArrowBack} from 'react-icons/bi'

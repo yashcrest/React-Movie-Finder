@@ -40,7 +40,7 @@ const SearchBar = ({setResults,input,setInput}) => {
 
 
   return (
-    <div>
+    <div className='search-bar'>
         <a href="#" className='input-icon'><FaSearch color='grey' size={30}/></a>
         <input className='input' type="text" placeholder='Search a Movie...' value={input}  onChange={(e) => handleChange(e.target.value)}/>
     </div>
