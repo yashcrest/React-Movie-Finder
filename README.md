@@ -17,7 +17,9 @@ A simple and intuitive web application to search for movies and view detailed in
 - **TMDB API**: To fetch the movie details.
 - Other libraries and tools include `react-router-dom`, React Icons, etc.
 
-## How to Use:
+## To Clone the project locally:
+
+> **_NOTE:_**  Please create a .env file and add VITE_TMDB_API_KEY = "61ba334e8728a89f12e1c2f0efc08d79"
 
 1. **Clone the Repository**: 
 
@@ -25,5 +27,4 @@ A simple and intuitive web application to search for movies and view detailed in
 git clone https://github.com/yashcrest/React-Movie-Finder
 cd React-Movie-Finder
 ```
-> **_NOTE:_**  Please create a .env file and add VITE_TMDB_API_KEY = "61ba334e8728a89f12e1c2f0efc08d79"
 
