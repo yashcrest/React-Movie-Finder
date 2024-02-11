@@ -1,3 +1,4 @@
+// displays all movies in cart view in homepage
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 

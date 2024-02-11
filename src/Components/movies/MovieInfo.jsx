@@ -1,4 +1,4 @@
-// this page handles movie detailed view
+// this page handles movie detailed view once clicked from homepage
 import React, { useEffect, useState } from 'react'
 import {FaStar} from 'react-icons/fa'
 import {BiArrowBack} from 'react-icons/bi'
