@@ -5,8 +5,6 @@ import MovieInfo from "./Components/movies/MovieInfo";
 import SearchProvider from "./Contexts/SearchContext";
 
 const App = () => {
-  const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
   return (
     <SearchProvider>
       <Router>

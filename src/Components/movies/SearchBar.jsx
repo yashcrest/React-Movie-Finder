@@ -1,8 +1,15 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-const SearchBar = ({ setResults, input, setInput }) => {
-  //fetching data
+// importing search context
+import { useSearch } from "../../Contexts/SearchContext";
+
+const SearchBar = () => {
+  //varibles from useSearch context
+  const { input, setInput, setResults, hasSearched, setHasSearched } =
+    useSearch();
+
+  //fetching movie data from TMDB
   const fetchData = async (value) => {
     const api_key = import.meta.env.VITE_TMDB_API_KEY;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${value}&language=en-US`;
@@ -29,7 +36,8 @@ const SearchBar = ({ setResults, input, setInput }) => {
 
   const handleChange = (value) => {
     setInput(value);
-
+    //setting to true if searched for anything
+    setHasSearched(true);
     // this is to check, if the search bar is not an empty string.
     if (value.trim()) {
       fetchData(value);
