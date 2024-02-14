@@ -6,8 +6,7 @@ import { useSearch } from "../../Contexts/SearchContext";
 
 const SearchBar = () => {
   //varibles from useSearch context
-  const { input, setInput, setResults, hasSearched, setHasSearched } =
-    useSearch();
+  const { input, setInput, setResults, setHasSearched } = useSearch();
 
   //fetching movie data from TMDB
   const fetchData = async (value) => {
@@ -21,8 +20,9 @@ const SearchBar = () => {
       }
 
       const movieData = await res.json();
-      console.log(movieData);
-      if (movieData.Error) {
+
+      //checking if result is empty
+      if (movieData.results.length === 0) {
         console.log(movieData.Error);
         setResults([]);
       } else {
