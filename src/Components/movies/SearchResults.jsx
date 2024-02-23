@@ -3,14 +3,12 @@ import EachResult from "./EachResult";
 import { useSearch } from "../../Contexts/SearchContext";
 
 const SearchResults = () => {
-  const { results, input, hasSearched } = useSearch();
+  const { results } = useSearch();
   return (
     <div className="results-list">
-      {results.length > 0 ? (
-        results.map((result, id) => <EachResult result={result} key={id} />)
-      ) : hasSearched && !input ? (
-        <p>Please enter a valid movie name!</p>
-      ) : null}
+      {results.map((result, id) => (
+        <EachResult result={result} key={id} />
+      ))}
     </div>
   );
 };
