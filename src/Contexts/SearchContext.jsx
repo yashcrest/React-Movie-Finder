@@ -8,6 +8,7 @@ const SearchProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   return (
     <SearchContext.Provider
@@ -18,6 +19,8 @@ const SearchProvider = ({ children }) => {
         setResults,
         hasSearched,
         setHasSearched,
+        errorMessage,
+        setErrorMessage,
       }}
     >
       {children}
