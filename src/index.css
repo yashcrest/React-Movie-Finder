@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Rubik+Scribble&display=swap");
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -65,6 +67,7 @@ body {
   max-width: 500px;
   border-radius: 30px;
   overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
 .poster {
@@ -85,6 +88,11 @@ body {
 .movie-list {
   max-height: 700px;
   overflow-y: scroll;
+}
+
+/* MovieInfo cart styling */
+.movie-date {
+  font-style: italic;
 }
 
 /* mouse hover effect on each card */
