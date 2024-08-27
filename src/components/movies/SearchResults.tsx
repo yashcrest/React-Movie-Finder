@@ -1,13 +1,14 @@
-import React, { useState } from "react";
 import EachResult from "./EachResult";
-import { useSearch } from "../../Contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
-const SearchResults = () => {
-  const { results, errorMessage, hasSearched } = useSearch();
+const SearchResults = ({ onMovieClick }) => {
+  const { results, errorMessage, hasSearched } = useSearchContext();
   return (
     <div className="results-list">
       {results.length > 0 ? (
-        results.map((result, id) => <EachResult result={result} key={id} />)
+        results.map((result, id) => (
+          <EachResult onMovieClick={onMovieClick} result={result} key={id} />
+        ))
       ) : hasSearched && errorMessage ? (
         <p className="err-msg">{errorMessage}</p> // to display error message if movie name is invalid
       ) : null}

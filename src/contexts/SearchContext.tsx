@@ -1,10 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const SearchContext = createContext();
+const SearchContext = createContext("");
 
-export const useSearch = () => useContext(SearchContext);
-
-const SearchProvider = ({ children }) => {
+export const SearchProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
@@ -28,4 +26,4 @@ const SearchProvider = ({ children }) => {
   );
 };
 
-export default SearchProvider;
+export const useSearchContext = () => useContext(SearchContext);

@@ -1,9 +1,8 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useSearch } from "../../Contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
-const EachResult = ({ result }) => {
-  const { setInput } = useSearch();
+const EachResult = ({ result, onMovieClick }) => {
+  const { setInput } = useSearchContext();
   const navigate = useNavigate();
   const clicked = async () => {
     navigate(`movie/${result.id}`);

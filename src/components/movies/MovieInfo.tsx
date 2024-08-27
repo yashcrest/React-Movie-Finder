@@ -1,11 +1,11 @@
 // this page handles movie detailed view once clicked from homepage
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 
-const MovieInfo = ({ setResults }) => {
-  const { id } = useParams();
+const MovieInfo = () => {
+  const { id } = useParams(); //very useful feature of react-router-dom
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {

@@ -1,13 +1,12 @@
-import React from "react";
 import { FaSearch } from "react-icons/fa";
 
 // importing search context
-import { useSearch } from "../../Contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 const SearchBar = () => {
-  //varibles from useSearch context
+  //varibles from Searchcontext
   const { input, setInput, setResults, setHasSearched, setErrorMessage } =
-    useSearch();
+    useSearchContext();
 
   //fetching movie data from TMDB
   const fetchData = async (value) => {
