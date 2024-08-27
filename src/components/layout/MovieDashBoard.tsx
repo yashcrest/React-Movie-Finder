@@ -11,7 +11,6 @@ type MovieData = {};
 
 const MovieDashboard = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [input, setInput] = useState("");
   const [popularMovies, setPopularMovies] = useState([]);
 
   const { setResults } = useSearchContext();
