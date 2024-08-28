@@ -2,11 +2,15 @@ import { createContext, useContext, useState } from "react";
 
 const SearchContext = createContext("");
 
-export const SearchProvider = ({ children }) => {
-  const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+type TSearchProvider = {
+  children: React.ReactNode;
+};
+
+export const SearchProvider = ({ children }: TSearchProvider) => {
+  const [input, setInput] = useState<String>("");
+  const [results, setResults] = useState<String[]>([]);
+  const [hasSearched, setHasSearched] = useState<Boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<String>("");
 
   return (
     <SearchContext.Provider

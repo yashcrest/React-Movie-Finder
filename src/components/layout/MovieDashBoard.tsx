@@ -7,13 +7,28 @@ import SearchResults from "../movies/SearchResults";
 import MovieInfo from "../movies/MovieInfo";
 import { useSearchContext } from "../../contexts/SearchContext";
 
-type MovieData = {};
+type MovieData = {
+  id: number;
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+};
 
 const MovieDashboard = () => {
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState<MovieData | null>(null);
   const [popularMovies, setPopularMovies] = useState([]);
 
-  const { setResults } = useSearchContext();
+  const { setResults, setInput } = useSearchContext();
 
   // api call to fetch popular movies
   const fetchMovie = async () => {
@@ -21,7 +36,7 @@ const MovieDashboard = () => {
     const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${tmdb_api_key}&language=en-US`;
     try {
       const res = await axios.get(url);
-      console.log("axios response:", res);
+      // console.log("axios response:", res);
       //   obj with movie data
       const { results } = res.data;
       setPopularMovies(results);
@@ -35,9 +50,10 @@ const MovieDashboard = () => {
   }, []);
 
   //handle click on eachresult
-  const handleMovieClick = (movieData) => {
+  const handleMovieClick = (movieData: MovieData) => {
     setSelectedMovie(movieData);
     setResults([]);
+    setInput(""); //Clear the input field using React state management
   };
   return (
     <>

@@ -23,7 +23,7 @@ const MovieInfo = () => {
         ]);
 
       const movieData = await detailsResponse.json();
-      console.log("moviedata", movieData);
+      // console.log("moviedata", movieData);
       const creditData = await creditsResponse.json();
       const imageData = await imageResponse.json(); //still have to figure out how to handle and display this response
 

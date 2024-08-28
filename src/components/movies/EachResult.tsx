@@ -8,7 +8,7 @@ const EachResult = ({ result, onMovieClick }) => {
   const clicked = async () => {
     onMovieClick(result);
     navigate(`movie/${result.id}`);
-    setInput(""); //Clear the input field using React state management
+    console.log("movie data values", result);
   };
 
   return (
