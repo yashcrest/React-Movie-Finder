@@ -8,10 +8,10 @@ import MovieInfo from "../movies/MovieInfo";
 import { useSearchContext } from "../../contexts/SearchContext";
 
 type MovieData = {
-  id: number;
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
+  id: number;
   original_language: string;
   original_title: string;
   overview: string;
@@ -23,6 +23,8 @@ type MovieData = {
   vote_average: number;
   vote_count: number;
 };
+
+type TPopularMovies = {};
 
 const MovieDashboard = () => {
   const [selectedMovie, setSelectedMovie] = useState<MovieData | null>(null);
@@ -36,9 +38,9 @@ const MovieDashboard = () => {
     const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${tmdb_api_key}&language=en-US`;
     try {
       const res = await axios.get(url);
-      // console.log("axios response:", res);
       //   obj with movie data
       const { results } = res.data;
+      console.log(results);
       setPopularMovies(results);
     } catch (err) {
       console.log("Error fetching trending movies:", err);
