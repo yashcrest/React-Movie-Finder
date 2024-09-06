@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useSearchContext } from "../../contexts/SearchContext";
 
-const EachResult = ({ result, onMovieClick }) => {
-  const posterURL = `https://image.tmdb.org/t/p/w500/${result.poster_path}`;
-  const { setInput } = useSearchContext();
+const EachResult = ({ movie, onMovieClick }) => {
+  const posterURL = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   const navigate = useNavigate();
   const clicked = async () => {
-    onMovieClick(result);
-    navigate(`movie/${result.id}`);
+    onMovieClick(movie);
+    navigate(`movie/${movie.id}`);
     // console.log("movie data values: ", result);
   };
 
@@ -15,10 +13,10 @@ const EachResult = ({ result, onMovieClick }) => {
     <div className="each-result" onClick={clicked}>
       <img
         src={posterURL}
-        alt={result.title}
+        alt={movie.title}
         style={{ width: "70px", height: "100px", marginRight: "20px" }}
       />
-      {result.title}
+      {movie.title}
     </div>
   );
 };

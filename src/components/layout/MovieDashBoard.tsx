@@ -6,25 +6,7 @@ import SearchBar from "../movies/SearchBar";
 import SearchResults from "../movies/SearchResults";
 import MovieInfo from "../movies/MovieInfo";
 import { useSearchContext } from "../../contexts/SearchContext";
-
-type MovieData = {
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
-  id: number;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  release_date: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
-};
-
-type TPopularMovies = {};
+import { MovieData } from "../../types/MovieTypes";
 
 const MovieDashboard = () => {
   const [selectedMovie, setSelectedMovie] = useState<MovieData | null>(null);
@@ -55,7 +37,7 @@ const MovieDashboard = () => {
   const handleMovieClick = (movieData: MovieData) => {
     setSelectedMovie(movieData);
     setMovies([]);
-    setInput(""); //Clear the input field using React state management
+    setInput("");
   };
   return (
     <>

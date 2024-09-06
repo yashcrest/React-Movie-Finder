@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const MovieInfo = () => {
   const { id } = useParams(); //very useful feature of react-router-dom

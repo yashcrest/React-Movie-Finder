@@ -1,0 +1,4 @@
+- current: working on SearchResults
+- replace fetch with axios in SearchBar page
+- fix env variables issue in MovieDashboard, SearchBar , MovieInfo
+- add type safety for the response received from API in Movieinfo Page
