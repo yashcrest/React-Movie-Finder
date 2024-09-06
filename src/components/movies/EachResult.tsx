@@ -8,7 +8,7 @@ const EachResult = ({ result, onMovieClick }) => {
   const clicked = async () => {
     onMovieClick(result);
     navigate(`movie/${result.id}`);
-    console.log("movie data values: ", result);
+    // console.log("movie data values: ", result);
   };
 
   return (

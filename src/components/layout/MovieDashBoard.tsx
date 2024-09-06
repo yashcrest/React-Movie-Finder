@@ -30,7 +30,7 @@ const MovieDashboard = () => {
   const [selectedMovie, setSelectedMovie] = useState<MovieData | null>(null);
   const [popularMovies, setPopularMovies] = useState([]);
 
-  const { setResults, setInput } = useSearchContext();
+  const { setMovies, setInput } = useSearchContext();
 
   // api call to fetch popular movies
   const fetchMovie = async () => {
@@ -54,7 +54,7 @@ const MovieDashboard = () => {
   //handle click on eachresult
   const handleMovieClick = (movieData: MovieData) => {
     setSelectedMovie(movieData);
-    setResults([]);
+    setMovies([]);
     setInput(""); //Clear the input field using React state management
   };
   return (
