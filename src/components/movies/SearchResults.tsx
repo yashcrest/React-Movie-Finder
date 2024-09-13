@@ -1,9 +1,9 @@
 import EachResult from "./EachResult";
 import { useSearchContext } from "../../contexts/SearchContext";
-import { MovieData } from "../../types/MovieTypes";
+import { OnMovieClick } from "../../types/Index";
 
 type SearchResultsProps = {
-  onMovieClick: (movie: MovieData) => void;
+  onMovieClick: OnMovieClick;
 };
 
 const SearchResults = ({ onMovieClick }: SearchResultsProps) => {

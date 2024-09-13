@@ -1,21 +1,11 @@
 import { createContext, useContext, useState } from "react";
-
-type MovieResult = {
-  adult: boolean;
-  id: number;
-  original_title: string;
-  title: string;
-  video: boolean;
-  release_date: string;
-  vote_average: number;
-  vote_count: number;
-};
+import { MovieData } from "../types/Index";
 
 type TSearchContext = {
   input: string;
   setInput: (value: string) => void;
-  movies: MovieResult[];
-  setMovies: (movies: MovieResult[]) => void;
+  movies: MovieData[];
+  setMovies: (movies: MovieData[]) => void;
   hasSearched: boolean;
   setHasSearched: (value: boolean) => void;
   errorMessage: string;
@@ -30,7 +20,7 @@ type TSearchProvider = {
 
 export const SearchProvider = ({ children }: TSearchProvider) => {
   const [input, setInput] = useState<string>("");
-  const [movies, setMovies] = useState<MovieResult[]>([]);
+  const [movies, setMovies] = useState<MovieData[]>([]);
   const [hasSearched, setHasSearched] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 

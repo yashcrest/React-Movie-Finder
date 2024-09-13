@@ -1,4 +1,5 @@
-- current: working on SearchResults
+- current: working on `SearchResults` & `MovieList`
+- feels like repeating when catching `onMovieClick` function and defining its type `SearchResults`
 - replace fetch with axios in SearchBar page
 - fix env variables issue in MovieDashboard, SearchBar , MovieInfo
 - add type safety for the response received from API in Movieinfo Page

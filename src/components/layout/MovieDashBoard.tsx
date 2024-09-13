@@ -6,11 +6,13 @@ import SearchBar from "../movies/SearchBar";
 import SearchResults from "../movies/SearchResults";
 import MovieInfo from "../movies/MovieInfo";
 import { useSearchContext } from "../../contexts/SearchContext";
-import { MovieData } from "../../types/MovieTypes";
+import { TrendingMoviesData } from "../../types/Index";
 
 const MovieDashboard = () => {
-  const [selectedMovie, setSelectedMovie] = useState<MovieData | null>(null);
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState<TrendingMoviesData | null>(
+    null
+  );
+  const [popularMovies, setPopularMovies] = useState<TrendingMoviesData[]>([]);
 
   const { setMovies, setInput } = useSearchContext();
 
@@ -22,7 +24,8 @@ const MovieDashboard = () => {
       const res = await axios.get(url);
       //   obj with movie data
       const { results } = res.data;
-      console.log(results);
+      console.log("popular movies: ", results);
+      console.log(res.data);
       setPopularMovies(results);
     } catch (err) {
       console.log("Error fetching trending movies:", err);
@@ -34,8 +37,8 @@ const MovieDashboard = () => {
   }, []);
 
   //handle click on eachresult
-  const handleMovieClick = (movieData: MovieData) => {
-    setSelectedMovie(movieData);
+  const handleMovieClick = (TrendingMoviesData: TrendingMoviesData) => {
+    setSelectedMovie(TrendingMoviesData);
     setMovies([]);
     setInput("");
   };

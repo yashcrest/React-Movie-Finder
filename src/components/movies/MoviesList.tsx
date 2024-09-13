@@ -1,11 +1,16 @@
 // displays all movies in cart view in homepage
 import { useNavigate } from "react-router-dom";
+import { TrendingMoviesData } from "../../types/Index";
 
-const MoviesList = ({ popularMovies }) => {
+type MovieListProps = {
+  popularMovies: TrendingMoviesData[];
+};
+
+const MoviesList = ({ popularMovies }: MovieListProps) => {
   const navigate = useNavigate();
 
   //handle movie Click in homepage
-  const handleMovieClick = (movieId) => {
+  const handleMovieClick = (movieId: number) => {
     navigate(`/movie/${movieId}`);
   };
 

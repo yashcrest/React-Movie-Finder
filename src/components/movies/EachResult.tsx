@@ -1,12 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import { TrendingMoviesData, OnMovieClick } from "../../types/Index";
 
-const EachResult = ({ movie, onMovieClick }) => {
+type EachResultProps = {
+  movie: TrendingMoviesData;
+  onMovieClick: OnMovieClick;
+};
+
+const EachResult = ({ movie, onMovieClick }: EachResultProps) => {
   const posterURL = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   const navigate = useNavigate();
   const clicked = async () => {
     onMovieClick(movie);
     navigate(`movie/${movie.id}`);
-    // console.log("movie data values: ", result);
+    // console.log("each movie:", movie);
   };
 
   return (
