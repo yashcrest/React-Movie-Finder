@@ -97,6 +97,8 @@ body {
 .movie-list {
   max-height: 700px;
   overflow-y: scroll;
+  display: grid;
+  place-items: center;
 }
 
 /* MovieInfo cart styling */

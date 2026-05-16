@@ -27,7 +27,7 @@ const MoviesList = ({ popularMovies }: MovieListProps) => {
               <h3 className="text-center">{movie.title || movie.name}</h3>
               <div className="movie-list">
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
                   alt={movie.title}
                   className="img-fluid"
                 />
