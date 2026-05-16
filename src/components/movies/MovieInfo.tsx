@@ -4,12 +4,14 @@ import { FaStar } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { TMovieCredit, TMovieData } from "../../types/Index";
+import { TMovieCredit, TMovieData } from "../../types/Index"
+import Spinner from "../spinner/Spinner";
 
 const MovieInfo = () => {
   const tmdb_api_key = import.meta.env.VITE_TMDB_API_KEY;
   const omdb_api_key = import.meta.env.VITE_OMDB_API_KEY;
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [imdbRating, setImdbRating] = useState<string | null>(null);
   const [movieDetails, setMovieDetails] = useState<TMovieData | null>(null);
   const [movieCredits, setMovieCredits] = useState<TMovieCredit>({
@@ -50,6 +52,7 @@ const MovieInfo = () => {
 
       setMovieDetails(movieData);
       setMovieCredits(creditData);
+      setIsLoading(false);
       fetchImdbRating(movieData.imdb_id);
     };
 
@@ -71,7 +74,25 @@ const MovieInfo = () => {
     setImdbRating(imdbData.imdbRating);
   };
 
-  if (!movieDetails) return <div>Loading...</div>; //need to adder spinner instead of this
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (!movieDetails) {
+    return <div className="text-center mt-5">Error: Movie details not found</div>;
+  }
+
   return (
     <>
       <Link className="link h2 text-dark" to="/">

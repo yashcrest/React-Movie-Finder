@@ -6,3 +6,4 @@ export { default as MovieInfo } from "./movies/MovieInfo";
 export { default as MoviesList } from "./movies/MoviesList";
 export { default as SeachBar } from "./movies/SearchBar";
 export { default as SearchResults } from "./movies/SearchResults";
+export { default as Spinner } from "./spinner/Spinner";
