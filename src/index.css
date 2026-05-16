@@ -26,6 +26,8 @@ body {
   border: 1px solid rgb(81, 84, 25);
   padding: 0.2em 0.8em;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .input {
@@ -49,15 +51,16 @@ body {
 
 .each-result {
   padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #efefef;
+  }
 }
 
 /* error msg */
 .err-msg {
   padding: 0.8rem;
-}
-
-.each-result:hover {
-  background-color: #efefef;
 }
 
 .movie-info {
@@ -72,6 +75,12 @@ body {
 
 .poster {
   padding: 10px;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
 .plot,
@@ -97,10 +106,17 @@ body {
 
 /* mouse hover effect on each card */
 .card {
+  height: 50rem;
+  background: #f3f3f3;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover {
+.card:hover img {
   transform: scale(1.1);
 }
 

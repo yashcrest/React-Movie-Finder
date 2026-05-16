@@ -17,18 +17,18 @@ const SearchBar = () => {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
 
-      const data = await res.json(); // actual data returned from api call
-      const { results } = data; // destructuring results object
+      const data = await res.json();
+      const { results } = data;
 
       console.log("all the results : ", results);
       console.log("actual data object : ", data);
 
-      //checking if result is empty
+
       if (results.length === 0) {
         setErrorMessage("No results found. Please Enter a valid movie name.");
         setMovies([]);
       } else {
-        //pushing it on the results array
+
         setMovies(results);
         setErrorMessage("");
       }
@@ -39,9 +39,7 @@ const SearchBar = () => {
 
   const handleChange = (value: string) => {
     setInput(value);
-    //setting to true if searched for anything
     setHasSearched(true);
-    // this is to check, if the search bar is not an empty string.
     if (value.trim()) {
       fetchData(value);
     } else {
@@ -52,9 +50,7 @@ const SearchBar = () => {
 
   return (
     <div className="search-bar">
-      <a href="#" className="input-icon">
-        <FaSearch color="grey" size={30} />
-      </a>
+      <FaSearch color="grey" size={30} />
       <input
         className="input"
         type="text"
