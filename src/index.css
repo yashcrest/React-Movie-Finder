@@ -108,7 +108,7 @@ body {
 
 /* mouse hover effect on each card */
 .card {
-  height: 50rem;
+  height: 40rem;
   background: #f3f3f3;
   overflow: hidden;
   cursor: pointer;
