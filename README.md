@@ -4,7 +4,6 @@ A simple and intuitive web application to search for movies and view detailed in
 
 ![Movie-Finder](https://github.com/yashcrest/React-Movie-Finder/assets/79971012/a7abb99b-413c-46aa-b531-4189ca5889fa)
 
-
 ## Features:
 
 1. **Search Movies**: Search for any movie by name.
@@ -19,12 +18,11 @@ A simple and intuitive web application to search for movies and view detailed in
 
 ## To Clone the project locally:
 
-> **_NOTE:_**  Please create a .env file and add VITE_TMDB_API_KEY = "61ba334e8728a89f12e1c2f0efc08d79"
+> **_NOTE:_** Please create a .env file and add VITE_TMDB_API_KEY = "d3cdbc32540e20d2ca9d93d4a747f635"
 
-1. **Clone the Repository**: 
+1. **Clone the Repository**:
 
 ```bash
 git clone https://github.com/yashcrest/React-Movie-Finder
 cd React-Movie-Finder
 ```
-
