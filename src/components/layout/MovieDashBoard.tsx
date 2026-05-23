@@ -8,6 +8,13 @@ import MovieInfo from "../movies/MovieInfo";
 import { useSearchContext } from "../../contexts/SearchContext";
 import { TrendingMoviesData } from "../../types/Index";
 
+const tmdb_api_key = import.meta.env.VITE_TMDB_API_KEY;
+if (!tmdb_api_key) {
+  throw new Error(
+    "Missing VITE_TMDB_API_KEY. Add it to your .env file at the project root."
+  );
+}
+
 const MovieDashboard = () => {
   const [selectedMovie, setSelectedMovie] = useState<TrendingMoviesData | null>(
     null
@@ -18,7 +25,6 @@ const MovieDashboard = () => {
 
   // api call to fetch popular movies
   const fetchMovie = async () => {
-    const tmdb_api_key = import.meta.env.VITE_TMDB_API_KEY;
     const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${tmdb_api_key}&language=en-US`;
     try {
       const res = await axios.get(url);
